@@ -27,6 +27,20 @@ class UserSeeder extends Seeder
         $user->assignRole('Admin');
 
         $this->command->info('Data User '.$user->name.' has been saved.');
-       
+
+
+        $user = User::create([
+            'name'      => 'Murid',
+            'username'  => 'SELET',
+            'email'     => 'murid@sch.id',
+            'role'      => 'Murid',
+            'status'    => 'Aktif',
+            'password'  => bcrypt('MEMEK')
+        ]);
+
+        $user->assignRole('Murid');
+
+        $this->command->info('Data User '.$user->name.' has been saved.');
+
     }
 }
